@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1111",
+    "firebase_url": "https://sizzling-inferno-1111.firebaseio.com",
+    "project_id": "sizzling-inferno-1111",
+    "storage_bucket": "sizzling-inferno-1111.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1111:android:1111",
+        "android_client_info": {
+          "package_name": "kr.co.prnd.erroractivitysample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1111.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "1111"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1111:android:1111",
+        "android_client_info": {
+          "package_name": "kr.co.prnd.erroractivitysample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1111.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "1111"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
