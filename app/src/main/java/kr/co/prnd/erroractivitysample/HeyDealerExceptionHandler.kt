@@ -51,13 +51,13 @@ class HeyDealerExceptionHandler(
     private fun isSkipActivity(activity: Activity) = activity is ErrorActivity
 
     override fun uncaughtException(thread: Thread, throwable: Throwable) {
-        crashlyticsExceptionHandler.uncaughtException(thread, throwable)
         lastActivity?.run {
             val stringWriter = StringWriter()
             throwable.printStackTrace(PrintWriter(stringWriter))
 
             startErrorActivity(this, stringWriter.toString())
         }
+        crashlyticsExceptionHandler.uncaughtException(thread, throwable)
         Process.killProcess(Process.myPid())
         System.exit(-1)
     }
