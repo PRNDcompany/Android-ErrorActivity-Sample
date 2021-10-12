@@ -10,8 +10,7 @@ import java.io.StringWriter
 
 class HeyDealerExceptionHandler(
     application: Application,
-    private val defaultExceptionHandler: Thread.UncaughtExceptionHandler,
-    private val fabricExceptionHandler: Thread.UncaughtExceptionHandler
+    private val crashlyticsExceptionHandler: Thread.UncaughtExceptionHandler
 ) : Thread.UncaughtExceptionHandler {
 
     private var lastActivity: Activity? = null
@@ -51,15 +50,14 @@ class HeyDealerExceptionHandler(
 
     private fun isSkipActivity(activity: Activity) = activity is ErrorActivity
 
-    override fun uncaughtException(thread: Thread?, throwable: Throwable) {
-        fabricExceptionHandler.uncaughtException(thread, throwable)
+    override fun uncaughtException(thread: Thread, throwable: Throwable) {
+        crashlyticsExceptionHandler.uncaughtException(thread, throwable)
         lastActivity?.run {
             val stringWriter = StringWriter()
             throwable.printStackTrace(PrintWriter(stringWriter))
 
             startErrorActivity(this, stringWriter.toString())
-        } ?: defaultExceptionHandler.uncaughtException(thread, throwable)
-
+        }
         Process.killProcess(Process.myPid())
         System.exit(-1)
     }
